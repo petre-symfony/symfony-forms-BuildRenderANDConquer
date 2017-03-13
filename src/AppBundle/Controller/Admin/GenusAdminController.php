@@ -29,7 +29,7 @@ class GenusAdminController extends Controller
     /**
      * @Route("/genus/new", name="admin_genus_new")
      */
-    public function newAction(Request, $request)
+    public function newAction(Request $request)
     {
         $form = $this->createForm(GenusFormType::class);
         
