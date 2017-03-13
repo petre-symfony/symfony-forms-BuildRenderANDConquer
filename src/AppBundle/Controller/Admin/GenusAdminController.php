@@ -31,5 +31,9 @@ class GenusAdminController extends Controller
     public function newAction()
     {
         $form = $this->createForm(GenusFormType::class);
+        
+        return $this->render('admin/genus/new.html.twig', [
+            'genusForm' => $form->createView()
+        ]);
     }
 }
