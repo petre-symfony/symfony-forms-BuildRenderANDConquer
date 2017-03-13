@@ -18,7 +18,7 @@ class GenusFormType extends AbstractType{
         'placeholder'   => 'Choose a Sub Family',
         'class'         => subFamily::class,
         'query_builder' => function(SubFamilyRepository $repo){
-        
+          return $repo->createAlphabeticalQueryBuilder(); 
         }  
       ])      
       ->add('funFact')
