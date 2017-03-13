@@ -41,6 +41,8 @@ class GenusAdminController extends Controller
           $em = $this->getDoctrine()->getManager();
           $em->persist($genus);
           $em->flush();
+          
+          return $this->redirectToRoute('admin_genus_list');
         }
         
         return $this->render('admin/genus/new.html.twig', [
