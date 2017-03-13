@@ -4,6 +4,7 @@ namespace AppBundle\Controller\Admin;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use AppBundle\Form\GenusFormType;
 
 /**
  * @Route("/admin")
@@ -29,6 +30,6 @@ class GenusAdminController extends Controller
      */
     public function newAction()
     {
-        // let's go to work!
+        $form = $this->createForm(GenusFormType::class);
     }
 }
