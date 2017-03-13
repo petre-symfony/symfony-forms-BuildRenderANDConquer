@@ -7,6 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use AppBundle\Entity\SubFamily;
 use AppBundle\Repository\SubFamilyRepository;
 
@@ -28,7 +29,9 @@ class GenusFormType extends AbstractType{
           'No'  => false  
         ]    
       ])
-      ->add('firstDiscoveredAt');      
+      ->add('firstDiscoveredAt', DateType::class, [
+        'widget' => 'single_text'    
+      ]);      
   }
   
   public function configureOptions(OptionsResolver $resolver) {
