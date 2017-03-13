@@ -7,13 +7,15 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use AppBundle\Entity\SubFamily;
 
 class GenusFormType extends AbstractType{
   public function buildForm(FormBuilderInterface $builder, array $options) {
     $builder->add('name')
       ->add('speciesCount')
       ->add('subFamily', EntityType::class, [
-        'placeholder' => 'Choose a Sub Family'
+        'placeholder' => 'Choose a Sub Family',
+        'class'       => subFamily::class  
       ])      
       ->add('funFact')
       ->add('isPublished', ChoiceType::class, [
