@@ -58,7 +58,7 @@ class GenusAdminController extends Controller
      */
     public function editAction(Request $request, Genus $genus)
     {
-        $form = $this->createForm(GenusFormType::class);
+        $form = $this->createForm(GenusFormType::class, $genus);
         
         //only handles data on POST
         $form->handleRequest($request);
@@ -69,7 +69,7 @@ class GenusAdminController extends Controller
           $em->persist($genus);
           $em->flush();
           
-          $this->addFlash('success', 'Genus created');
+          $this->addFlash('success', 'Genus updated');
           
           return $this->redirectToRoute('admin_genus_list');
         }
