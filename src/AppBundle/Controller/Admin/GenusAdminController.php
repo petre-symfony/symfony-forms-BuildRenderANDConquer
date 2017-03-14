@@ -74,7 +74,7 @@ class GenusAdminController extends Controller
           return $this->redirectToRoute('admin_genus_list');
         }
         
-        return $this->render('admin/genus/new.html.twig', [
+        return $this->render('admin/genus/edit.html.twig', [
             'genusForm' => $form->createView()
         ]);
     }
