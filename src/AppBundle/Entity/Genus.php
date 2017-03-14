@@ -108,6 +108,10 @@ class Genus
         return new \DateTime('-'.rand(0, 100).' days');
     }
 
+    public function getIsPublished(){
+      return $this->isPublished;
+    }
+    
     public function setIsPublished($isPublished)
     {
         $this->isPublished = $isPublished;
